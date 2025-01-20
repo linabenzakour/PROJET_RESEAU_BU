@@ -15,7 +15,6 @@ using namespace std;
 void afficherMenuPrincipal();
 void donneesTests();
 void donneesInitiales();
-void afficherToutesBibliotheques();
 void afficherMessageTitre(string);
 
 vector<Bibliotheque> biblios;
@@ -129,16 +128,6 @@ void donneesInitiales()
     }
 }
 
-void afficherToutesBibliotheques()
-{
-    afficherMessageTitre("Liste de nos bibliotheques");
-    for (auto i = 0; i < biblios.size(); i++)
-    {
-        cout << "======================================= " << endl;
-        biblios[i].affiche();
-        cout << "======================================= " << endl;
-    }
-}
 
 void donneesTests()
 // avec cette fonction on peut tester pour visualiser l'ensemble des informations concernant le réseau de bibliothèque et sa gestion 
