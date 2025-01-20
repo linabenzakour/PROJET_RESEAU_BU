@@ -1,9 +1,7 @@
 #ifndef BIBLIOTHEQUECPP_ALBUM_H
 #define BIBLIOTHEQUECPP_ALBUM_H
-
 #include "Livre.h"
 #include <iostream>
-
 using namespace std;
 
 class Album : public Livre

@@ -69,7 +69,7 @@ void Bibliotheque::removeLivre(int code)
 
     if (!found)
     {
-        cout << "Ce livre n'existe pas !" << endl;
+        cout << "Livre introuvable" << endl;
     }
 
     livres.erase(livres.begin() + num);
@@ -77,16 +77,16 @@ void Bibliotheque::removeLivre(int code)
 
 void Bibliotheque::affiche()
 {
-    cout << "BIBLIOTHEQUE " << getNom() << endl;
+    cout << "Bibliothèque " << getNom() << endl;
     cout << "Code : " << getCode() << " | Adresse : " << getAdresse() << endl;
 }
 
 void Bibliotheque::afficheLivres()
 {
-    cout << "Livres de " << getNom() << " (" << livres.size() << ") : " << endl;
+    cout << "Livre " << getNom() << " ( nombre d'ouvrages : " << livres.size() << ") : " << endl;
     for (auto i = 0; i < livres.size(); i++)
     {
-        cout << i + 1 << ")";
+        cout << i + 1 << "  -  ";
         livres[i]->affiche();
         cout << endl;
     }
@@ -94,10 +94,10 @@ void Bibliotheque::afficheLivres()
 
 void Bibliotheque::afficheAdherents()
 {
-    cout << "Adherents de " << getNom() << " (" << adherents.size() << ") : " << endl;
+    cout << "Adherents " << getNom() << " ( nombre d'ahdérents : "  << adherents.size() << ") : " << endl;
     for (auto i = 0; i < adherents.size(); i++)
     {
-        cout << i + 1 << ")";
+        cout << i + 1 << "  -  ";
         adherents[i]->affiche();
         cout << endl;
     }
@@ -118,7 +118,7 @@ Livre *Bibliotheque::getLivreFromCode(int code)
 
     if (!found)
     {
-        cout << "Not found";
+        cout << "introuvable";
         return nullptr;
     }
 
@@ -128,10 +128,9 @@ Livre *Bibliotheque::getLivreFromCode(int code)
 Livre *Bibliotheque::emprunte(int code, Emprunteur *emprunteur)
 {
     Livre *livre = getLivreFromCode(code);
-
     if (livre->getEmprunte_par() != nullptr)
     {
-        cout << "Deja emprunte" << endl;
+        cout << "Ce livre est deja emprunte" << endl;
         return nullptr;
     }
 
@@ -219,10 +218,11 @@ void Bibliotheque::restitue(int code)
     Livre *livre = getLivreFromCode(code);
     if (livre->getEmprunte_par() == nullptr)
     {
-        // TODO: exception
-        cout << "Pas emprunte" << endl;
+        cout << "nonemprunte" << endl;
         return;
     }
 
     livre->restitue();
 }
+
+

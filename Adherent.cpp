@@ -1,16 +1,11 @@
 #include "Adherent.h"
 #include "Bibliotheque.h"
-
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-Adherent::Adherent(const string &nom, const string &prenom, const string &adresse, int num_adherent,
-                   Bibliotheque *bibliotheque, int autorisation_emprunt) : Emprunteur(0), nom(nom), prenom(prenom),
-                                                                           adresse(adresse), num_adherent(num_adherent),
-                                                                           bibliotheque(bibliotheque),
-                                                                           autorisation_emprunt(autorisation_emprunt) {}
+Adherent::Adherent(const string &nom, const string &prenom, const string &adresse, int num_adherent, Bibliotheque *bibliotheque, int autorisation_emprunt) 
+: Emprunteur(0), nom(nom), prenom(prenom), adresse(adresse), num_adherent(num_adherent), bibliotheque(bibliotheque),autorisation_emprunt(autorisation_emprunt) {}
 
 const string &Adherent::getNom() const
 {
@@ -96,7 +91,7 @@ void Adherent::restitue(int code)
 
     if (!found)
     {
-        cout << "Cet adhérent n'a pas emprunté ce livre..." << endl;
+        cout << "Un problème a été rencontré : l'adhérent n'a pas emprunté ce livre, veuillez réessayer !" << endl;
         return;
     }
 
@@ -106,10 +101,6 @@ void Adherent::restitue(int code)
 
 void Adherent::affiche()
 {
-    //*
-    cout << "Adherent : " << getPrenom() << " " << getNom()
-         << " | Adresse : " << getAdresse()
-         << " | Bilbliotheque : " << getBibliotheque()->getNom()
-         << " | Livres : " << livres_empruntes.size() << "/" << getAutorisationEmprunt();
-    //*/
+    cout << "Adherent : " << getPrenom() << " " << getNom() << " | Adresse : " << getAdresse()<< " | Bilbliotheque : " << getBibliotheque()->getNom() << " | Livres : " << livres_empruntes.size() << "/" << getAutorisationEmprunt();
+
 }

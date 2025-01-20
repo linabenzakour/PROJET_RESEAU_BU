@@ -4,7 +4,6 @@
 #include "Album.h"
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 Livre::Livre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,const string &public_destine) : code(code), auteur(auteur), titre(titre), editeur(editeur), isbn(isbn),public_destine(public_destine)
@@ -108,12 +107,12 @@ void Livre::affiche()
         if (emprunte_par->getType() == 0)
         {
             Adherent *adherent = dynamic_cast<Adherent *>(emprunte_par);
-            cout << "Emprunte par " << adherent->getNom() << " " << adherent->getPrenom();
+            cout << "Emprunté par l'adhérent" << adherent->getNom() << "  " << adherent->getPrenom();
         }
         else if (emprunte_par->getType() == 1)
         {
-            Bibliotheque *b = dynamic_cast<Bibliotheque *>(emprunte_par);
-            cout << "Emprunte par la bibliotheque " << b->getNom();
+            Bibliotheque *biblio = dynamic_cast<Bibliotheque *>(emprunte_par);
+            cout << "Emprunté par la biblio :  " << biblio->getNom();
         }
     }
     else

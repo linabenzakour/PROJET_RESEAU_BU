@@ -11,14 +11,13 @@ class Emprunteur
 {
 public:
     Emprunteur(int type);
-
     Emprunteur();
 
     int getType() const;
 
     const vector<Livre *> *getLivresEmpruntes() const;
     virtual string getNom();
-
+    
     void afficheLivresEmpruntes();
 
 protected:

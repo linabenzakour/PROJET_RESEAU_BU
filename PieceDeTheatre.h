@@ -1,6 +1,5 @@
 #ifndef BIBLIOTHEQUECPP_PIECEDETHEATRE_H
 #define BIBLIOTHEQUECPP_PIECEDETHEATRE_H
-
 #include "Livre.h"
 #include <iostream>
 

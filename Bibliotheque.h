@@ -1,14 +1,11 @@
 
 #ifndef BIBLIO_BIBLIOTHEQUE_H
 #define BIBLIO_BIBLIOTHEQUE_H
-
 #include <iostream>
-
-using namespace std;
-
 #include "Emprunteur.h"
 #include "Livre.h"
 #include <vector>
+using namespace std;
 class Adherent;
 
 class Bibliotheque : public Emprunteur
@@ -31,12 +28,15 @@ public:
     int getCodeFromISBN(string);
     void restitue(int);
     void addAdherent(Adherent &adherent);
+
     void afficheAdherents();
 
 private:
+
     string nom;
     string adresse;
     int code;
+
     vector<Livre *> livres;
     vector<Adherent *> adherents;
     int nbLivres;

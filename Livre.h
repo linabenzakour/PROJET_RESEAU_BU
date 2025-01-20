@@ -1,10 +1,8 @@
 #ifndef BIBLIO_LIVRE_H
 #define BIBLIO_LIVRE_H
-
 #include <iostream>
 using namespace std;
 class Emprunteur;
-
 class Livre
 {
 public:
@@ -22,19 +20,15 @@ public:
     const string &getIsbn() const;
     void setIsbn(const string &isbn);
     const string &getPublic_destine() const;
+
     void setPublic_destine(const string &public_destine);
     int getCode() const;
     virtual void affiche();
-
     Emprunteur *getEmprunte_par() const;
-
     void setEmprunte_par(Emprunteur *emprunte_par);
     void restitue();
-
     int getType() const;
-
     virtual void setIllustrations(const string &illustrations);
-
     enum types
     {
         LIVRE,BD,ALBUM,POESIE,ROMAN,PIECE

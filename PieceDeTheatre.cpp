@@ -1,5 +1,4 @@
 #include "PieceDeTheatre.h"
-
 #include <iostream>
 #include <string>
 
@@ -29,5 +28,5 @@ void PieceDeTheatre::setSiecle(int siecle)
 void PieceDeTheatre::affiche()
 {
     Livre::affiche();
-    cout << " | Siècle d'écriture :" << getSiecle() << endl;
+    cout << " | Siècle :" << getSiecle() << endl;
 }

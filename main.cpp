@@ -22,7 +22,7 @@ vector<Bibliotheque> biblios;
 
 int main()
 {
-    afficherMessageTitre("BENZAKOUR Lina et BARNY Julie vous présente leur Bibliotheque ");
+    afficherMessageTitre(" BENZAKOUR Lina et BARNY Julie vous présente leur réseau de bibliotheques : ");
     afficherMenuPrincipal();
     return 0;
 }
@@ -35,7 +35,7 @@ void afficherMenuPrincipal()
     do
     {
         cout << " ---- Menu Pincipal de la gestion du réseau de bibliothèque ----" << endl;
-        cout << "Mettre à jour les données : taper 1 " << endl;
+        cout << "Initialiser et mettre à jour les données : taper 1 " << endl;
         cout << "Afficher la liste des bibliotheques : taper 2 " << endl;
         cout << "Voir nos différentes fonctionnalités : taper 3" << endl;
         cout << "Veillez tapez votre choix : ";
@@ -72,6 +72,8 @@ void MAJdonnees()
     BD bd1 = BD(102, "Albert Uderzo", "Astérix chez les Bretons", "Paris", "9782012101435", "Humour", "Illust. Uderzo");
     PieceDeTheatre piece1 = PieceDeTheatre(103, "Molière", "Le Malade Imaginaire", "Paris", "9782070369426", "Théâtre", 1673);
     Poesie poesie1 = Poesie(104, "Charles Baudelaire", "Les Fleurs du mal", "Paris", "9782253137602", "Poésie", "Vers classiques");
+    Livre livre = Livre(103, "George Orwell", "1984", "Londres", "9780451524935", "Dystopie");
+
 
     // biblio 1
     Bibliotheque BNF = Bibliotheque("Bibliothèque nationale de France", "Quai François Mauriac", 75013);
@@ -144,6 +146,7 @@ void donneestests()
     BD bd1 = BD(102, "Albert Uderzo", "Astérix chez les Bretons", "Paris", "9782012101435", "Humour", "Illust. Uderzo");
     PieceDeTheatre piece1 = PieceDeTheatre(103, "Molière", "Le Malade Imaginaire", "Paris", "9782070369426", "Théâtre", 1673);
     Poesie poesie1 = Poesie(104, "Charles Baudelaire", "Les Fleurs du mal", "Paris", "9782253137602", "Poésie", "Vers classiques");
+    Livre livre = Livre(103, "George Orwell", "1984", "Londres", "9780451524935", "Dystopie");
 
     // biblio 1
     Bibliotheque BNF = Bibliotheque("Bibliothèque nationale de France", "Quai François Mauriac", 75013);
@@ -151,6 +154,7 @@ void donneestests()
     BNF.addLivre(&bd1);
     BNF.addLivre(&piece1);
     BNF.addLivre(&poesie1);
+    BNF.addLivre(&livre);
 
     // aherent
     Adherent adherentBNF1 = Adherent("BENZAKOUR", "Lina", "20 Rue Albert Roussel 75017 Paris", 1, &BNF, 2);
@@ -259,32 +263,35 @@ void donneestests()
     cout << endl<< endl<< endl;
 
     cout << "----- La BPI veut suprimer une piece : -----" << endl;
+    cout << endl << endl;
     cout << "Avant suppression : " << piece2.getTitre() << endl;
     cout << endl;
     BPI.afficheLivres();
-    cout << endl
-         << endl;
+    cout << endl << endl;
 
     BPI.removeLivre(piece2.getCode());
 
     cout << "Après suppresion\n";
+    cout << endl << endl;
     BPI.afficheLivres();
-    cout << endl
-         << endl
-         << endl;
+    cout << endl<< endl<< endl;
 
     cout << "----- La BSG veut emprunter une BD à la  BPI : -----" << endl;
     // LIMITE du titre 
-    cout << "Avant emprunt\n";
+    cout << endl << endl;
+    cout << "----- Avant emprunt\n";
+    cout << endl << endl;
     BSG.afficheLivres();
     cout << endl;
     BSG.demande(&BPI, "9782884711245");
 
-    cout << "Après emprunt\n";
+    cout << "----- Après emprunt\n";
+    cout << endl << endl;
     BPI.afficheLivres();
     cout << endl << endl;
     BSG.afficheLivres();
     cout << endl<< endl<< endl;
+
 }
 
 void afficherMessageTitre(const string titre)
