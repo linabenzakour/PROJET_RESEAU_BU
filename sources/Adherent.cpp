@@ -1,5 +1,5 @@
-#include "Adherent.h"
-#include "Bibliotheque.h"
+#include "../headers/Adherent.h"
+#include "../headers/Bibliotheque.h"
 #include <iostream>
 #include <string>
 using namespace std;

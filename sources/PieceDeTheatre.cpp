@@ -1,4 +1,4 @@
-#include "PieceDeTheatre.h"
+#include "../headers/PieceDeTheatre.h"
 #include <iostream>
 #include <string>
 

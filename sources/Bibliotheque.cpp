@@ -1,12 +1,12 @@
-#include "Bibliotheque.h"
-#include "Adherent.h"
-#include "Livre.h"
-#include "Emprunteur.h"
-#include "Album.h"
-#include "BD.h"
-#include "PieceDeTheatre.h"
-#include "Poesie.h"
-#include "Roman.h"
+#include "../headers/Bibliotheque.h"
+#include "../headers/Adherent.h"
+#include "../headers/Livre.h"
+#include "../headers/Emprunteur.h"
+#include "../headers/Album.h"
+#include "../headers/BD.h"
+#include "../headers/PieceDeTheatre.h"
+#include "../headers/Poesie.h"
+#include "../headers/Roman.h"
 #include <iostream>
 #include <string>
 

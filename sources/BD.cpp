@@ -1,4 +1,4 @@
-#include "BD.h"
+#include "../headers/BD.h"
 #include <iostream>
 #include <string>
 using namespace std;

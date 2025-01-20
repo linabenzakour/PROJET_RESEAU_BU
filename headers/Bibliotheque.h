@@ -2,7 +2,7 @@
 #ifndef BIBLIO_BIBLIOTHEQUE_H
 #define BIBLIO_BIBLIOTHEQUE_H
 #include <iostream>
-#include "Emprunteur.h"
+#include "../headers/Emprunteur.h"
 #include "Livre.h"
 #include <vector>
 using namespace std;

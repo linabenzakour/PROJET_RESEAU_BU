@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Livre.h"
-#include "BD.h"
-#include "Bibliotheque.h"
-#include "Poesie.h"
-#include "PieceDeTheatre.h"
-#include "Adherent.h"
-#include "Album.h"
+#include "headers/Livre.h"
+#include "headers/BD.h"
+#include "headers/Bibliotheque.h"
+#include "headers/Poesie.h"
+#include "headers/PieceDeTheatre.h"
+#include "headers/Adherent.h"
+#include "headers/Album.h"
 
 using namespace std;
 

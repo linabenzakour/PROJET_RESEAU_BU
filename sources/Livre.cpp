@@ -1,7 +1,7 @@
-#include "Livre.h"
-#include "Emprunteur.h"
-#include "Adherent.h"
-#include "Album.h"
+#include "../headers/Livre.h"
+#include "../headers/Emprunteur.h"
+#include "../headers/Adherent.h"
+#include "../headers/Album.h"
 #include <iostream>
 #include <string>
 using namespace std;

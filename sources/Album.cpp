@@ -1,4 +1,4 @@
-#include "Album.h"
+#include "../headers/Album.h"
 #include <iostream>
 #include <string>
 using namespace std;
