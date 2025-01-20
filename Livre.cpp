@@ -107,7 +107,7 @@ void Livre::affiche()
         if (emprunte_par->getType() == 0)
         {
             Adherent *adherent = dynamic_cast<Adherent *>(emprunte_par);
-            cout << "Emprunté par l'adhérent" << adherent->getNom() << "  " << adherent->getPrenom();
+            cout << "Emprunté par l'adhérent :" << adherent->getNom() << "  " << adherent->getPrenom();
         }
         else if (emprunte_par->getType() == 1)
         {

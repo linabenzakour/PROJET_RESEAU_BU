@@ -13,8 +13,8 @@ using namespace std;
 
 // Nos fonctions principales:
 void afficherMenuPrincipal();
-void donneestests();
-void MAJdonnees();
+void donneesTests();
+void donneesInitiales();
 void afficherToutesBibliotheques();
 void afficherMessageTitre(string);
 
@@ -34,25 +34,21 @@ void afficherMenuPrincipal()
     int choix = 0;
     do
     {
-        cout << " ---- Menu Pincipal de la gestion du réseau de bibliothèque ----" << endl;
-        cout << "Initialiser et mettre à jour les données : taper 1 " << endl;
-        cout << "Afficher la liste des bibliotheques : taper 2 " << endl;
-        cout << "Voir nos différentes fonctionnalités : taper 3" << endl;
+        cout << " ---- Menu de la gestion du notre réseau de bibliothèque ----" << endl;
+        cout << "Présentation de nos bibliothèque et de leurs ouvrages : taper 1 " << endl;
+        /*cout << "Afficher la liste des bibliotheques et leur ouvrage : taper 2 " << endl;*/
+        cout << "Gerer le réseau des biliothèques : taper 2" << endl;
         cout << "Veillez tapez votre choix : ";
         cin >> choix;
 
         switch (choix)
         {
         case 1:
-            MAJdonnees();
+            donneesInitiales();
             break;
 
         case 2:
-            afficherToutesBibliotheques();
-            break;
-
-        case 3:
-            donneestests();
+            donneesTests();
             break;
 
         default:
@@ -63,8 +59,8 @@ void afficherMenuPrincipal()
     } while (continuer);
 }
 
-void MAJdonnees()
-// On doit mettre à jour les données lors de la première utilisation et à chaque modification
+void donneesInitiales()
+// On initialise les BU et leurs ouvrages 
 
 {
 
@@ -124,7 +120,13 @@ void MAJdonnees()
     biblios.push_back(BSG);
     biblios.push_back(BibliothequeParis);
 
-    afficherMessageTitre("Les données ont bien été mises à jour");
+    afficherMessageTitre("Nos bibliotheques : ");
+    for (auto i = 0; i < biblios.size(); i++)
+    {
+        cout << "======================================= " << endl;
+        biblios[i].affiche();
+        cout << "======================================= " << endl;
+    }
 }
 
 void afficherToutesBibliotheques()
@@ -138,8 +140,8 @@ void afficherToutesBibliotheques()
     }
 }
 
-void donneestests()
-// avec cette fonction on peut tester pour visualiser l'ensemble des informations concernant le réseau de bibliothèque
+void donneesTests()
+// avec cette fonction on peut tester pour visualiser l'ensemble des informations concernant le réseau de bibliothèque et sa gestion 
 {
 
     Livre livre1 = Livre(101, "Victor Hugo", "Les Misérables", "Paris", "9782070418056", "Classique");
@@ -210,7 +212,7 @@ void donneestests()
         biblios.push_back(BibliothequeParis);
     */
 
-    afficherMessageTitre("Test des differentes fonctions");
+    afficherMessageTitre("Test des differentes possibilités dans nos bibliothèques");
     // PRÉSENTATION DES DIFFERENTES BIBLIOTHÈQUES
     cout << "----- Bibliotheque BNF, ses livres et ses adherents : -----" << endl;
     cout << endl<< endl;
@@ -240,7 +242,7 @@ void donneestests()
     cout << endl<< endl << endl;
 
     cout << "----- Adherent de la BNF qui emprunte un livre : -----" << endl;
-    cout << endl<< endl;
+    cout << endl;
 
     adherentBNF1.emprunte(livre1.getCode()); 
     cout << endl<< endl;
@@ -252,26 +254,24 @@ void donneestests()
     cout << endl<< endl<< endl;
 
     cout << "----- L'adherant veut resstitué le livre : -----" << endl;
-    cout << endl<< endl;
+    cout << endl;
     adherentBNF1.restitue(livre1.getCode());
-    cout << endl << endl;
-
+    cout << endl;
     BNF.afficheLivres();
-    cout << endl<< endl;
-
+    cout << endl;
     BNF.afficheLivresEmpruntes();
-    cout << endl<< endl<< endl;
+    cout << endl<< endl;
 
     cout << "----- La BPI veut suprimer une piece : -----" << endl;
     cout << endl << endl;
-    cout << "Avant suppression : " << piece2.getTitre() << endl;
+    cout << "----- Avant suppression : " << piece2.getTitre() << endl;
     cout << endl;
     BPI.afficheLivres();
     cout << endl << endl;
 
     BPI.removeLivre(piece2.getCode());
 
-    cout << "Après suppresion\n";
+    cout << "----- Après suppresion\n";
     cout << endl << endl;
     BPI.afficheLivres();
     cout << endl<< endl<< endl;
