@@ -7,7 +7,8 @@
 
 using namespace std;
 
-class Emprunteur {
+class Emprunteur
+{
 public:
     Emprunteur(int type);
 
@@ -15,16 +16,14 @@ public:
 
     int getType() const;
 
-    const vector <Livre*> *getLivresEmpruntes() const;
+    const vector<Livre *> *getLivresEmpruntes() const;
     virtual string getNom();
 
     void afficheLivresEmpruntes();
 
 protected:
     int type;
-    vector <Livre*> livres_empruntes;
-
+    vector<Livre *> livres_empruntes;
 };
 
-
-#endif 
+#endif

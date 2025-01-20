@@ -6,19 +6,17 @@
 
 using namespace std;
 
-class Roman : public Livre {
+class Roman : public Livre
+{
 private:
     string genre;
+
 public:
-    Roman(int code, string auteur, string titre, string editeur, string isbn,
-           string public_destine, string genre);
-    Roman(const Roman*);
+    Roman(int code, string auteur, string titre, string editeur, string isbn,string public_destine, string genre);
+    Roman(const Roman *);
     void affiche();
-
     const string &getGenre() const;
-
     void setGenre(const string &genre);
 };
 
-
-#endif 
+#endif

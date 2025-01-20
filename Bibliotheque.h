@@ -11,7 +11,8 @@ using namespace std;
 #include <vector>
 class Adherent;
 
-class Bibliotheque : public Emprunteur {
+class Bibliotheque : public Emprunteur
+{
 public:
     Bibliotheque(const string &nom, const string &adresse, int code);
 
@@ -20,27 +21,27 @@ public:
     const string &getAdresse() const;
     void setAdresse(const string &adresse);
     int getCode() const;
-    const vector<Livre*> *getLivres() const;
+    const vector<Livre *> *getLivres() const;
     void addLivre(Livre *livre);
     void removeLivre(int);
     void affiche();
     void afficheLivres();
-    Livre* emprunte(int, Emprunteur*);
-    Livre* demande(Bibliotheque*, string);
+    Livre *emprunte(int, Emprunteur *);
+    Livre *demande(Bibliotheque *, string);
     int getCodeFromISBN(string);
     void restitue(int);
     void addAdherent(Adherent &adherent);
     void afficheAdherents();
+
 private:
     string nom;
     string adresse;
     int code;
-    vector<Livre*> livres;
-    vector<Adherent*> adherents;
+    vector<Livre *> livres;
+    vector<Adherent *> adherents;
     int nbLivres;
 
-    Livre* getLivreFromCode(int);
+    Livre *getLivreFromCode(int);
 };
 
-
-#endif 
+#endif

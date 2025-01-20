@@ -5,15 +5,13 @@
 using namespace std;
 class Emprunteur;
 
-
-
-class Livre {
+class Livre
+{
 public:
-    Livre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
-          const string &public_destine);
+    Livre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,const string &public_destine);
 
     Livre();
-    Livre(Livre*);
+    Livre(Livre *);
 
     const string &getAuteur() const;
     void setAuteur(const string &auteur);
@@ -37,7 +35,10 @@ public:
 
     virtual void setIllustrations(const string &illustrations);
 
-    enum types { LIVRE, BD, ALBUM, POESIE, ROMAN, PIECE};
+    enum types
+    {
+        LIVRE,BD,ALBUM,POESIE,ROMAN,PIECE
+    };
 
 protected:
     int type;
@@ -47,8 +48,7 @@ protected:
     string editeur;
     string isbn;
     string public_destine;
-    Emprunteur* emprunte_par;
+    Emprunteur *emprunte_par;
 };
-
 
 #endif

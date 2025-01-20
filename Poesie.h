@@ -6,19 +6,17 @@
 
 using namespace std;
 
-class Poesie : public Livre{
+class Poesie : public Livre
+{
 private:
     string style;
+
 public:
-    Poesie(int code, string auteur, string titre, string editeur, string isbn,
-           string public_destine, string style);
-
-    Poesie(const Poesie*);
+    Poesie(int code, string auteur, string titre, string editeur, string isbn,string public_destine, string style);
+    Poesie(const Poesie *);
     void affiche();
-
     const string &getStyle() const;
-
     void setStyle(const string &style);
 };
 
-#endif 
+#endif

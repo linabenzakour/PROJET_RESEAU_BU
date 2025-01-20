@@ -5,25 +5,29 @@
 using namespace std;
 
 Emprunteur::Emprunteur(int type) : type(type) {}
-
 Emprunteur::Emprunteur() {}
 
-int Emprunteur::getType() const {
+int Emprunteur::getType() const
+{
     return type;
 }
 
-const vector<Livre*> *Emprunteur::getLivresEmpruntes() const {
+const vector<Livre *> *Emprunteur::getLivresEmpruntes() const
+{
     return &livres_empruntes;
 }
 
-string Emprunteur::getNom() {
+string Emprunteur::getNom()
+{
     return "UNDEFINED";
 }
 
-void Emprunteur::afficheLivresEmpruntes() {
+void Emprunteur::afficheLivresEmpruntes()
+{
     cout << "Livres empruntes : " << endl;
-    for(auto i = 0; i < livres_empruntes.size() ; i++){
-        cout << i+1 << ") ";
+    for (auto i = 0; i < livres_empruntes.size(); i++)
+    {
+        cout << i + 1 << ") ";
         livres_empruntes[i]->affiche();
         cout << endl;
     }

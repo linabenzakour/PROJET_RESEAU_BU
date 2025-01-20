@@ -6,11 +6,11 @@
 
 using namespace std;
 
-class Adherent : public Emprunteur {
+class Adherent : public Emprunteur
+{
 public:
     Adherent(const string &nom, const string &prenom, const string &adresse, int num_adherent,
              Bibliotheque *bibliotheque, int autorisation_emprunt);
-
 
     const string &getNom() const;
     void setNom(const string &nom);
@@ -32,14 +32,14 @@ public:
     void affiche();
     void emprunte(int code);
     void restitue(int code);
+
 private:
     string nom;
     string prenom;
     string adresse;
     int num_adherent;
-    Bibliotheque* bibliotheque;
+    Bibliotheque *bibliotheque;
     int autorisation_emprunt;
 };
-
 
 #endif
